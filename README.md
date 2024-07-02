@@ -122,16 +122,16 @@ Run the tests:
 
 The tests are designed to perform the following:
 
-- **Login to KNIME Hub**: Authenticate using provided credentials.
-- **Create a Space**: Verify that a new space can be created.
-- **Make Space Public**: Make the space public.
+- **Create a Space(public/private)**: Verify that a new space can be created.
 - **Delete the Space:** Verify that the created space can be deleted.
 
 ## Configuration
-Update the src/test/resources/config.properties file with your KNIME Hub account credentials:
-
--knime.username=your-username
--knime.password=your-password
+In order to run these api test fresh auth token is required. To fetch it perform following actions:
+- Login using the credentials.  
+- Perform any action that requires api call like listing spaces.
+- Use inspect element on browser to fetch the cookie values.
+- In cookies check for the key "knime_hub_auth"
+- Copy the value and set it for the cookie value variable after "knime_hub_auth=<pasted value goes here>" in SpaceManagementTests.java line 25
 
 ## Contact
 If you have any questions, feel free to contact me at faizanabbas1295@gmail.com
