@@ -45,6 +45,26 @@ public class SpaceManagementTests {
       
     }
     
+    // Create a public Space
+    @Test
+    public void PublicSpace() {
+    	 String requestBody = "{\"private\":false,\"type\":\"Space\"}";
+    	 
+    	  String uri = "/repository/Users/account:user:6f24d04f-3080-4140-b9c7-76b39fe90684/"+spaceId+ "?overwrite=false";
+          Response response=given().header("Cookie", cookievalue)
+          .contentType(ContentType.JSON)
+              .body(requestBody)
+              .when()
+              .put(uri)
+              .then()
+              .statusCode(201)
+              .extract().response();
+          
+          String responseBody = response.getBody().asString();
+        
+    	
+    }
+    
    
 
     @Test
