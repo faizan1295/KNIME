@@ -12,6 +12,7 @@ Before running the project, ensure you have the following installed:
 - [Maven](https://maven.apache.org/download.cgi)
 - [Git](https://git-scm.com/downloads)
 - A KNIME Hub account (create one [here](https://hub.knime.com/))
+- Authentication Token: To execute API tests successfully, you need a valid authentication token (knime_hub_auth). This token is necessary because JWT tokens expire periodically. Ensure you have the token ready before running the tests.
 
 ## Installation
 
