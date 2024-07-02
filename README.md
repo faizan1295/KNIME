@@ -100,7 +100,7 @@ Here is the `pom.xml` file used in this project:
 
 The project uses Maven for dependency management and build automation. The main configuration is in the `pom.xml` file, which includes the following key dependencies and plugins
 
-## SetUp
+## (@BeforeAll Method)
 In the @BeforeAll setup method (setup()), RestAssured is configured with the base URI and authentication cookie required for accessing the KNIME Hub API.
 ## @Test Method
 The testCreate() method executes a PUT request to create a new space using RestAssured, utilizing the configured authentication cookie and specifying the endpoint URI based on spaceId.
@@ -108,8 +108,8 @@ The testCreate() method executes a PUT request to create a new space using RestA
 -@BeforeAll Setup: Initializes RestAssured with the base URI (https://api.hub.knime.com) and sets the cookievalue and spaceId variables for authentication and constructing API endpoints.
 -@Test Method: Sends a PUT request to create a new space. It includes the authentication token (cookievalue) in the Cookie header and validates the response status code (201 Created).
 ## Notes
-Ensure the cookievalue and spaceId variables are updated as per your authentication requirements and API endpoints.
-Customize the requestBody and assertions in testCreate() based on your API's payload and expected responses.
+-Ensure the cookievalue and spaceId variables are updated as per your authentication requirements and API endpoints.
+-Customize the requestBody and assertions in testCreate() based on your API's payload and expected responses.
 
 ## Usage
 Run the tests:
