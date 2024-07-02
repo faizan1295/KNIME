@@ -131,6 +131,6 @@ Update the src/test/resources/config.properties file with your KNIME Hub account
 -knime.password=your-password
 
 ## Contact
-If you have any questions, feel free to contact us at faizanabbas1295@gmail.com
+If you have any questions, feel free to contact me at faizanabbas1295@gmail.com
   
   
