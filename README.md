@@ -16,23 +16,11 @@ Before running the project, ensure you have the following installed:
 ## Installation
 
 1. Clone the repository from GitHub:
-
-    ```shell
+   ```
     git clone https://github.com/your-username/knime-api-testing.git
-    cd knime-api-testing
-    ```
-
-2. Install the project dependencies using Maven:
-
-    ```shell
-    mvn clean install
-    ```
-
-## Project Structure
-
-The project uses Maven for dependency management and build automation. The main configuration is in the `pom.xml` file, which includes the following key dependencies and plugins:
-
-### Dependencies
+   ```
+2. Install the project dependencies using Maven
+   ### Dependencies
 
 - **REST-assured**: Java DSL for easy testing of REST services.
 - **JUnit 5 (Jupiter)**: Framework for unit testing.
@@ -108,12 +96,26 @@ Here is the `pom.xml` file used in this project:
     </build>
 </project>
 ```
+## Project Structure
+
+The project uses Maven for dependency management and build automation. The main configuration is in the `pom.xml` file, which includes the following key dependencies and plugins
+
+## SetUp
+In the @BeforeAll setup method (setup()), RestAssured is configured with the base URI and authentication cookie required for accessing the KNIME Hub API.
+## @Test Method
+The testCreate() method executes a PUT request to create a new space using RestAssured, utilizing the configured authentication cookie and specifying the endpoint URI based on spaceId.
+## Explanation
+-@BeforeAll Setup: Initializes RestAssured with the base URI (https://api.hub.knime.com) and sets the cookievalue and spaceId variables for authentication and constructing API endpoints.
+-@Test Method: Sends a PUT request to create a new space. It includes the authentication token (cookievalue) in the Cookie header and validates the response status code (201 Created).
+## Notes
+Ensure the cookievalue and spaceId variables are updated as per your authentication requirements and API endpoints.
+Customize the requestBody and assertions in testCreate() based on your API's payload and expected responses.
 
 ## Usage
-Running the Tests
-To run the automated tests, execute the following command:
+Run the tests:
 
- 
+-Right-click on the test file SpaceManagementTests.java.
+-Select Run As -> JUnit Test
 
 ## Test Details 
 
